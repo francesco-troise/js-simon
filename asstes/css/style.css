@@ -1,0 +1,12 @@
+body{
+    background-image: url("../img/sfondo.jpg");
+    background-repeat: no-repeat;     
+    background-size: cover;           
+    background-position: center;
+}
+
+html, body {
+  height: 100%;
+  margin: 0; 
+  padding: 0;
+}
