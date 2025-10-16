@@ -9,8 +9,10 @@ function random_number(){
     while(numeri_generati.length < 5){
     //Ciclo while eseguito fintantochè array(numeri_generati) non raggiunge lunghezza 5
         let num = Math.floor(Math.random() * 99) + 1
-        random_number.push(num)
+        numeri_generati.push(num)
     }
-    return numeri_generati
+    return numeri_generati.join("--")
 }
+
+
 
