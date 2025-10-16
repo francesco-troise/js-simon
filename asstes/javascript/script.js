@@ -43,6 +43,8 @@ function create_input(){
         //Definisce il -type del -input
         input.placeholder = "Inserire qui il numero"
         //Definisce -placeholder del -input
+        input.required = true
+        //Assegna l'attributo required agli -input [Alternativa : input.setAttribute("required", "")]
 
         box_input.appendChild(input)
         //Aggiunge il nodo generato (-input) all'interno del <div> dedicato
