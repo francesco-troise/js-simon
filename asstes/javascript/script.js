@@ -20,8 +20,17 @@ function random_number(){
     return numeri_generati.join("--")
 }
 
-function clear_number(){
+function clear_number(callback){
     box_number.innerHTML = ""
+
+    if(typeof callback === "function"){
+    /*tramite callback assicura che la seconda funzione(create_input) si esegue dopo la sparizione dei numeri.
+     la condizione controlla che venga passata effettivamente una funzione*/
+
+     callback()
+     //Invoca la funzione passata, solo dopo aver terminato la prima funzione
+
+    }
 }
 
 function create_input(){
@@ -54,6 +63,19 @@ function create_input(){
     //Aggiunge il nodo generato(-button) all'interno del <div> dedicato
 }
 
+btn_start.addEventListener("click", ()=>{
+    const numeri_generati = random_number()
+    //Salva i numeri generati nella variabile "numeri_generati"
+    box_number.innerText = numeri_generati
+
+    setTimeout(()=>{
+    //Peremtte di eseguire funzioni solo al passaggio di una determinata quantità di tempo
+        clear_number(create_input)
+        //Prima esegue "clear_number", dopo esegue "create_input"
+
+    },30000)
+
+})
 
 
 
