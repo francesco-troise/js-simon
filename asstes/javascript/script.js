@@ -1,5 +1,8 @@
 const btn_start = document.getElementById("btn-start")
 const box_number = document.getElementById("box-number")
+//<div> dove verranno inseriti i numeri generati
+const box_input = document.getElementById("box-input")
+//<div> dove verranno inseriti gli <input> geenrati lato javascript
 //Seleziono gli elementi della DOM
 
 function random_number(){
@@ -13,6 +16,24 @@ function random_number(){
     }
     return numeri_generati.join("--")
 }
+
+function clear_number(){
+    box_number.innerHTML = ""
+}
+
+function create_input(){
+    for(let i = 0; i < 5; i++){
+        const input = document.createElement("input")
+        input.id = "user-num" + i
+        input.type = "number"
+        input.placeholder = "Inserire qui il numero"
+
+        box_input.appendChild(input)
+    }
+}
+
+
+    
 
 
 
